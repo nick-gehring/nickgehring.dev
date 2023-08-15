@@ -1,0 +1,39 @@
+---
+import ContactForm from "@components/Form.astro";
+import Astronaut from "@components/Astronaut-Waving.astro";
+import Shadow from "@assets/images/shadow.svg";
+import Image from "@components/Image.astro";
+---
+<section class="contact pt-12 overflow-hidden pb-96 lg:pt-24 lg:pb-72 bg-dark relative" id="contact">
+    <div class="container mx-auto px-6 md:px-4">
+        <div class="grid grid-cols-12 h-full justify-center items-center">
+            <div class="col-span-12 lg:col-span-10 lg:col-start-2">
+                <p class="font-bold md:text-xl"><strong class="text-cyan">Contact me</strong></p>
+                <h2 class="text-3xl md:text-5xl text-white font-bold mb-5">Close encounters of the Nick kind</h2>
+                <p class="text-xl md:text-2xl text-white font-light mb-8">Thanks for stopping by. I’d love to hear from you! Send me a virtual greeting below.</p>
+                <ContactForm />
+            </div>
+        </div>
+    </div>
+    <div>
+        <Astronaut />
+        <img src={Shadow} class="absolute bottom-9 md:bottom-[5rem] right-[8rem] md:right-[19rem] z-10" width="180" height="39" alt="Shadow beneath Astronaut Mike Dexter's feet" />
+    </div>
+    <Image src="home/marbled-planet.png" className="planet absolute md:-bottom-84 right-0" alt="A purple planet with darker purple swirls on its surface" width="1440" height="1461" />
+</section>
+
+<style>
+    .contact {
+        background-attachment: fixed;
+        background-image: url("../assets/images/home/bigger-stars.svg"), url("../assets/images/home/haze.svg"), url("../assets/images/home/stars.svg"), radial-gradient(50% 50%, rgba(23, 8, 48, 1) 25.6%, rgba(19, 4, 41, 1) 69.05%, rgba(14, 0, 33, 1) 100%);
+        background-size: contain, cover, contain, cover;
+        background-repeat: repeat, no-repeat, repeat, no-repeat;
+        background-position: center, center, center, center;
+    }
+    @media(max-width: 700px) {
+        .planet {
+            bottom: -17rem;
+        }
+    }
+ 
+</style>

@@ -1,0 +1,24 @@
+---
+import Page from '@layouts/Page.astro';
+---
+
+<Page title="The tech that makes this all possible" abovetitle="Colophon" description="View the tech that makes NickGehring.dev run">
+    <Fragment slot="content">
+       
+        <p class="mb-5">What follows are some of the things that make up this website.</p>
+
+                <h2 class="font-bold text-3xl mb-1">Frontend</h2>
+                <p class="text-large text-dark mb-8">I usually reach for Eleventy for my site generator, but gave <strong>Astro</strong> a shot with this site. Likewise, I tend to hand roll my style sheets or use Bootstrap, but went with <strong>Tailwind CSS</strong> here. I am pleased with both – particularly Tailwind, which is expressive and helped me from recreating the same selectors yet again in another project.</p>
+
+                <h2 class="font-bold text-3xl mb-1">Hosting/DNS</h2>
+                <p class="text-large  mb-5 text-dark"><strong>Netlify</strong> is my static website host of choice. You get so much value for so little money. Deploys are a cinch. Hooking up external APIs are, too. And you can schedule functions now, too – just like cron jobs of old!</p> 
+                <p class="text-large  text-dark mb-8"><strong>Cloudflare</strong> provides DNS services, is a breeze to set up and provides great tools for free.</p>
+
+                <h2 class="font-bold text-3xl mb-1">Content Management</h2>
+
+                <p class="text-large text-dark mb-5"><s>Zero, zip, zilch, nada.</s>* I've always had a soft spot for CMSs – and look at all these new headless CMSs!</p>
+                <p class="text-large text-dark mb-5">But all the time I spend looking at them, learning them, and building a site toward their way of doing things takes away time from actually launching this website.</p>
+                <p class="text-large text-dark">* The journal posts are written in a local copy of WordPress because it's easier to write, revise, and spellcheck there.</p>
+
+    </Fragment>
+</Page>

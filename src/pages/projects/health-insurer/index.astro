@@ -1,0 +1,53 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Card from '@components/Card.astro';
+import health from "@assets/images/work/health.jpg";
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="Diagnosis: rebrand and replatform" description="Overhauling a health insurer's website" industry="Health insurance" tech="HubSpot, Vue, Laravel, PHP, HTML, CSS, JavaScript, Algolia, Serverless" screen="health-insurer/health2.jpg" projectlink="https://www.wellsense.org">
+    <Fragment slot="content">
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">As part of a client's rebrand, we were hired to <strong>redesign and consolidate four separate domains into one.</strong> Our client's existing content management system (CMS) was hurting their productivity and holding back their business. Although we were hired to redesign the website, we knew we had to suggest a CMS change.</p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">What I did</h2>
+
+            <p class="mb-5">Before kicking off the redesign, we made a presentation of CMS alternatives, and a winner quickly emerged: HubSpot, an all-in-one, marketing centered product, which the client selected.</p>
+
+            <p class="mb-5"><strong>I believe product design centered around the user experience is key to success.</strong> When users are more comfortable with the tools they are given, they are more productive and feel empowered to make decisions.</p>
+
+            <p class="mb-5">With a CMS in place, we began the redesign process.</p>
+        </div>
+        <div class="col-span-12 grid grid-cols-12 gap-5 my-5">
+            <Card title="Balance" className="col-span-12 md:col-span-4">I helped combine and transform their websites, moving them from their arcane, difficult-to-use CMS to HubSpot, all while balancing a dizzying array of federal regulations around health care.</Card>
+
+            <Card title="A search for PDFs" className="col-span-12 md:col-span-4">Insurance means documents. Although HubSpot is great for the consumer experience, the client required a specific solution for documents. Enter the “search crawler,” a simple Algolia-based app I created that crawls PDF documents and renders them searchable.</Card>
+
+            <Card title="Repurposing the blog" className="col-span-12 md:col-span-4">We repurposed HubSpot’s blog engine to become a jobs site, marrying external APIs with HubSpot code.</Card>
+        </div>
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl">The outcome</h2>
+            <p class="">The redesign successfully launched. eleventy is now under a retainer to maintain the insurer’s website and help with market expansion.</p>
+        </div>
+    </Fragment>
+    <Fragment slot="image-gallery">
+        <div class="col-span-12 md:col-span-6">
+            <Image src="health-insurer/health1.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="The health insurer's website before the redesign/rebrand" />
+            <p class="md:text-sm italic mt-2">Before</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="health-insurer/health4.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="The home page after the redesign" />
+            <p class="md:text-sm italic mt-2">After</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="health-insurer/health5.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="A custom HubSpot component that allows documents to be searched/filtered" />
+            <p class="md:text-sm italic mt-2">Custom HubSpot component</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="health-insurer/health6.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="That same component but with an Algolia-based search" />
+            <p class="md:text-sm italic mt-2">Algolia-powered search</p>
+        </div>
+    </Fragment>
+</ProjectLayout>

@@ -1,0 +1,41 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+}
+const { title, description } = Astro.props;
+import "@assets/global.css";
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import Rocket from '@components/Rocket.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+  		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="sitemap" href="/sitemap-index.xml" />
+  		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+		<title>{title} | Nick Gehring</title>
+	</head>
+	<body class="font-sans">
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<a href="#top" class="fixed bottom-5 right-5 z-20 focus:ring-blue-500 focus:border-blue-500"><Rocket /></a>
+	</body>
+</html>
+
+<style>
+	[href="#top"] {
+		width: 48px;
+    	height: 109px;
+	}
+</style>

@@ -1,0 +1,52 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Card from '@components/Card.astro';
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="Growing an alternative" description="Helping a business expand from a home garage to millions of dollars in sales" industry="Manufacturing" tech="Shopify, Vue, Laravel, PHP, HTML, CSS, JavaScript" screen="fully-loaded/fl1.jpg" projectlink="https://fullyloadedchew.com">
+    <Fragment slot="content">
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">A trio of friends, who were longtime dipping tobacco consumers, invented a unique tobacco-free product. To test market interest, they decided to sell online first. <strong>Would consumers embrace their invention?</strong></p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">What I did</h2>
+
+            <p class="mb-5">To test the waters for this new product, we quickly assembled a WooCommerce shop. But as business gained steam, WooCommerce did not scale in a way we were comfortable. We wanted something that could handle product sales easily without configuring an endless number of plugins and customizations.</p>
+
+            <p class="mb-5">Concurrently, we received an education on how payment processors do not work with certain products. Stripe and PayPal quickly ruled themselves out, as their policies do not permit this kind of "high-risk" product.</p>
+            
+            <p class="mb-5">Two solutions presented themselves: <strong>Shopify Plus would accomodate our growth</strong>, and a local bank would help with payment processing via Authorize.net.</p>
+        </div>
+        <div class="col-span-12 grid grid-cols-12 gap-5 my-5">
+            <Card title="A custom Shopify-based experience" className="col-span-12 md:col-span-4">I created custom templates in Liquid, complete with features that support age verification. As sales grew, we added a searchable map of retailers that sell the product that syncs with Shopify-based data.</Card>
+
+            <Card title="Keeping track of inventory" className="col-span-12 md:col-span-4">With increasing sales, I crafted the first web-based product inventory system. Although Shopify has inventory tracking, it could not track products in the particular way they needed in their new warehouse.</Card>
+
+            <Card title="Expanding into wholesale, Canada, other products" className="col-span-12 md:col-span-4">I created a membership-only wholesale store, which allows approved retailers to order product in a streamlined way. An energy pouch was launched in late 2020. Additionally, we forked the main site's design and launched a Canada-only shop in 2022.</Card>
+        </div>
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl">The outcome</h2>
+            <p class="mb-5">Since its founding in late 2018, the firm has <strong>blossomed from a small operation to millions of dollars in online business</strong>.</p>
+        </div>
+    </Fragment>
+    <Fragment slot="image-gallery">
+        <div class="col-span-12 md:col-span-6">
+            <Image src="fully-loaded/fl2.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Fully Loaded Canada home page</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="fully-loaded/fl3.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Map of retail locations</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="fully-loaded/fl4.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Drvy Energy, an energy pouch product</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="fully-loaded/fl5.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Fully Loaded wholesale portal</p>
+        </div>
+    </Fragment>
+</ProjectLayout>

@@ -1,0 +1,53 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Card from '@components/Card.astro';
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="Promote scientific achievement" description="University's tools advance researchers' work" industry="University, research" tech="PHP, HTML, CSS, JavaScript, Vue, Timber, Twig, WordPress, Gutenberg/Block Editor" screen="tsbm/tsbm1.jpg" type="image" projectlink="https://translationalsciencebenefits.wustl.edu/">
+    <Fragment slot="content">
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">Researchers from Washington University in St. Louis created a framework public health and clinical scientists can use to <strong>measure the impact of their work in the real world.</strong> In early 2022, the group released <strong>a set of PDF-based tools</strong>, which assist researchers in planning, tracking, and demonstrating the impact of their research. </p>
+
+            <p class="mb-5">As the the school released these new PDFs, it determined it would need an online, interactive edition of the tools to go beyond what static PDFs could do.</p>
+
+            <h2 class="mb-4 mt-12 font-bold text-3xl md:text-4xl">What I did</h2>
+
+            <p class="mb-5">Working closely with the school and a design partner, I developed a web-based application built in WordPress and Vue for the tools.</p>
+
+            <p class="mb-8">In this app, users are able to...</p>
+        </div>
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3 grid grid-cols-12 gap-5 mb-8">
+            <Card className="col-span-12 md:col-span-4" type="nobg">
+                <Image src="tsbm/tsbm2.jpg" className="gallery-image mb-3" width="1200" height="1337" loading="lazy" alt="Creating an account on the TSBM site" />
+                <p class="text-base"><strong>Create secure accounts</strong> to track their research in the online toolkit.</p>
+            </Card>
+
+            <Card className="col-span-12 md:col-span-4" type="nobg">
+                <Image src="tsbm/tsbm3.jpg" className="gallery-image mb-3" width="1200" height="1337" loading="lazy" alt="The project dashboard screen" />
+                <p class="text-base"><strong>Share these projects</strong> with their colleagues and collaborate tracking their progress.</p>
+            </Card>
+
+            <Card className="col-span-12 md:col-span-4" type="nobg">
+                <Image src="tsbm/tsbm4.jpg" className="gallery-image mb-3" width="1200" height="1337" loading="lazy" alt="Tools share information between them" />
+                <p class="text-base"><strong>Create interconnected tools</strong> that share information with each other.</p>
+            </Card>
+            
+        </div>
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            
+            <p class="mb-5">Additionally, we produced a <strong>beautiful, intuitive redesign</strong> of the Institute of Clinical & Translational Sciences website to complement the new application.</p>
+
+
+            <h2 class="mb-4 mt-12 font-bold text-3xl md:text-4xl">The outcome</h2>
+            <p>Early feedback has been positive, but like any online product, it’s never done. In phase 2, we will be conducting usability studies with those researchers. We plan to iterate on the interface and experience as more researchers use the tools.</p>
+        </div>
+        
+    </Fragment> 
+    
+</ProjectLayout>

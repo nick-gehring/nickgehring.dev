@@ -1,0 +1,38 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="Go West, Young Nick" description="Nonprofit upgrades UX, gains Gutenberg, emends editing" industry="Government, nonprofits" tech="PHP, HTML, CSS, JavaScript, Vue, Timber, Twig, WordPress, Gutenberg/Block Editor" screen="csgwest/csgwest1.jpg" type="image" projectlink="https://csgwest.org">
+    <Fragment slot="content">
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">The Council of State Governments (CSG) is a multi-chapter organization spread across the United States. While each office is unique in terms of the regional audience it serves, they all share a common brand. The goal for the CSG West office was to adapt aspects of the eastern branches’ looks into its own while learning from how those sites were created.</p>
+
+            <p class="mb-5">It would be a <strong>WordPress-based site</strong> using the <strong>Block Editor</strong>, the first of the chapters to do so. This new site would be a big step for CSG West – <strong>previously staffers used Dreamweaver to update its pages.</strong></p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">What I did</h2>
+
+            <p class="mb-5">Starting with a blank <strong>Timber theme</strong>, I created the visual underpinnings of the West’s website, working in the color palette of blues, yellow and grays to form a clean and professional look. Additionally, <strong>I created custom blocks</strong> for the Block Editor, including ones for <strong>events, news and people</strong>. The backend editor also mimics the frontend aesthetic as closely as it can to make it seamless for editors.</p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">The outcome</h2>
+            <p class=""><strong>Updating the CSG West site is much easier and quicker.</strong> WordPress allows more than one person to edit and does not rely on outdated and not-beginner-friendly Dreamweaver. The office is happy with its new site and has an on-going reatiner with eleventy to provide technical assistance and updates.</p>
+        </div>
+    </Fragment> 
+    <Fragment slot="image-gallery">
+        <div class="col-span-12 md:col-span-4">
+            <Image src="csgwest/csgwest2.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="A look at the CSG West site home page before its redesign" />
+            <p class="md:text-sm italic mt-2">Before</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="csgwest/csgwest1.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="A look at the CSG West site home page after its redesign" />
+            <p class="md:text-sm italic mt-2">After</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="csgwest/csgwest3.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" alt="An inside page for the Agriculture and Water Comittee showing a photo of a river and green grass surrounding it" />
+            <p class="md:text-sm italic mt-2">Inside page for Agriculture & Water Committee</p>
+        </div>
+    </Fragment>
+</ProjectLayout>

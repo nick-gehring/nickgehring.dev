@@ -1,0 +1,257 @@
+<header class="main-header container mx-auto px-6 md:px-4 flex items-center justify-between py-7" id="top">
+    <a href="/" class="text-3xl font-bold name relative">
+        <span class="name-span"></span>
+        <span class="first-name"><span class="first-initial first-letters">n</span><span class="first-letters">i</span><span class="first-letters">c</span><span class="first-letters">k</span></span><span class="slash">/</span><span class="last-name"><span class="last-initial last-letters">g</span><span class="last-letters">e</span><span class="last-letters">h</span><span class="last-letters">r</span><span class="last-letters">i</span><span class="last-letters">n</span><span class="last-letters">g</span></span>
+    </a>
+    <nav class="">
+        <ul class="main-nav__ul flex gap-5">
+            <li class="main-nav__li"><a href="/#about" class="main-nav__a hidden md:list-item">About</a></li>
+            <li class="main-nav__li"><a href="/#projects" class="main-nav__a">Projects</a></li>
+            <li class="main-nav__li"><a href="/journal/" class="main-nav__a">Journal</a></li>
+            <li class="main-nav__li"><a href="/#contact" class="main-nav__a hidden sm:list-item">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+
+    .name-span {
+        z-index: 9;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 203px;
+        height: 36px;
+        position: absolute;
+    }
+    .name {
+        display: grid;
+        grid-template-areas: "n slash g";
+    }
+    .slash {
+        z-index: 4;
+    }
+    .first-name {
+        display: grid;
+        grid-template-areas: "n i c k";   
+    }
+    .first-initial {
+        background-color: white;
+        grid-area: n;
+    }
+    .first-letters {
+        background-color: white;
+        grid-area: n;
+        z-index: 1;
+    }
+
+    .first-letters:nth-child(1) {
+        z-index: 3;
+    }   
+   .last-name {
+        display: grid;
+        grid-template-areas: "g e h r i n g";   
+    }
+    .last-initial {
+        background-color: white;
+        grid-area: g;
+        z-index: 3;
+    }
+    .last-letters {
+        background-color: white;
+        grid-area: g;
+    }
+    .last-letters:nth-child(2),
+    .last-letters:nth-child(3),
+    .last-letters:nth-child(4),
+    .last-letters:nth-child(5),
+    .last-letters:nth-child(6),
+    .last-letters:nth-child(7) {
+        color: white;
+        z-index: 1;
+    }
+     
+</style>
+
+<script>
+    // match media query 768 or above
+    const mq = window.matchMedia( "(min-width: 768px)" );
+    if(mq.matches) {
+        const nameSpan = document.querySelector(".name-span");
+            nameSpan.addEventListener("mouseenter", function() {
+                
+                const firstName = document.querySelectorAll(".first-letters");
+                firstName[1].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(20px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+                firstName[2].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(29px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+                firstName[3].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+                const slash = document.querySelector(".slash");
+                slash.animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(48px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+                const lastName = document.querySelectorAll(".last-letters");
+                lastName[0].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+                const e = lastName[1].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+
+                e.finished.then(() => {
+                    lastName[1].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(67px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                )
+                });
+
+                const h = lastName[2].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+                h.finished.then(() => {
+                    lastName[2].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(85px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                    )
+                });
+
+                const r = lastName[3].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+                r.finished.then(() => {
+                    lastName[3].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(105px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                    )
+                });
+
+
+
+                const i = lastName[4].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+                i.finished.then(() => {
+                    lastName[4].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(118px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                    )
+                });
+    
+                const n = lastName[5].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+                n.finished.then(() => {
+                    lastName[5].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(128px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                    )
+                });
+
+                const lastg = lastName[6].animate(
+                        [{ transform: "translateX(0)" }, { transform: "translateX(47px)" }],
+                        {
+                            fill: "forwards",
+                            easing: "ease-in-out",
+                            duration: 1000
+                        }
+                    );
+
+            
+
+                lastg.finished.then(() => {
+                    lastName[6].animate(
+                    [{ color: "black", transform: "translateX(47px)" }, { color: "black", transform: "translateX(148px)" }],
+                    {
+                        fill: "forwards",
+                        easing: "ease-in-out",
+                        duration: 1000
+                    }
+                    );
+                });
+
+                }, {once: true});
+      
+    }
+       
+
+</script>

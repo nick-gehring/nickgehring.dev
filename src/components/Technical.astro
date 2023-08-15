@@ -1,0 +1,25 @@
+---
+import ArrowRight from "@components/ArrowRight.astro";
+import vue from "@assets/images/vue.svg";
+import php from "@assets/images/php.svg";
+import graphql from "@assets/images/graphql.svg";
+import wordpress from "@assets/images/wordpress.svg";
+import shopify from "@assets/images/shopify.svg";
+import hubspot from "@assets/images/hubspot.svg";
+import javascript from "@assets/images/javascript.svg";
+---
+<section class="container mx-auto px-6 md:px-4 technical-section grid grid-cols-12 mb-80 md:mb-24">
+    <h2 class="col-span-12 lg:col-span-11 lg:col-start-2 text-2xl md:text-4xl font-bold mb-4">Iconic design driven by technical curiosity</h2>
+    <p class="col-span-12 lg:col-span-8 lg:col-start-2 mb-5">I am an experienced developer who works well in the <strong>LAMP</strong> and <strong>JAM stacks</strong>. Design-wise, I have you covered with modern HTML and CSS. As a self-taught web designer — aren’t most of us? — I can figure it out, given any new technologies or challenges.</p>
+    <ul class="col-span-12 lg:col-span-11 lg:col-start-2 mb-5 flex gap-5 items-center">
+        <li><img src={vue} alt="Vue" width="75" height="65" title="Vue" /></li>
+        <li><img src={php} alt="PHP" width="75" height="75" title="PHP" /></li>
+        <li><img src={graphql} alt="GraphQL" width="75" height="75" title="GraphQL" /></li>
+        <li><img src={wordpress} alt="WordPress" width="75" height="75" title="WordPress" /></li>
+        <li><img src={shopify} alt="Shopify" width="65" height="75" title="Shopify" /></li>
+        <li><img src={hubspot} alt="Hubspot" width="75" height="75" title="Hubspot" /></li>
+        <li><img src={javascript} alt="JavaScript" width="75" height="75" title="JavaScript" /></li>
+    </ul>
+    <p class="col-span-12 text-base lg:col-span-8 lg:col-start-2 mb-7">Some of the technologies I know in icon form.</p>
+    <p class="col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-2"><a href="/pdfs/nick-gehring-resume-2023.pdf/" class="bg-cyan hover:bg-purple hover:text-white transition-all no-underline btn text-dark w-auto group px-8 py-4 font-bold text-xl flex justify-between" download="nick-gehring-resume.pdf">Download resume <ArrowRight width="26" height="30" /></a></p>
+</section>

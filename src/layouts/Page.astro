@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Layout.astro';
+export interface Props {
+	abovetitle: string;
+	title: string;
+	description: string;
+}
+const { abovetitle, title, description } = Astro.props;
+---
+
+<Layout title={ title } description={ description }>
+	<div class="container mx-auto px-6 md:px-4 mb-12">
+		<article class="grid grid-cols-12">
+			<div class="col-span-12">
+            	<div class="container mx-auto about-section grid grid-cols-12 mb-9">
+					<p class="col-span-12 lg:col-span-11 lg:col-start-2 font-bold text-purple md:text-xl mt-6 mb-1"><strong class="text-purple">{abovetitle}</strong></p>
+
+					<h1 class="leading-tight lg:col-span-10 lg:col-start-2 col-span-12 text-3xl md:text-6xl md:leading-none font-bold mb-5">{title}</h1>
+
+					<div class="col-span-12 lg:col-span-10 lg:col-start-2"><slot name="content" /></div>
+				</div>	
+			</div>
+		</article>
+	</div>
+</Layout>
+
+<style>
+	article {
+		min-height: 100vh;
+	}
+</style>

@@ -1,0 +1,67 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Card from '@components/Card.astro';
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="Improving safety" description="A tool to help law enforcement and mental health providers boost public safety" industry="Government, nonprofits" tech="Vue, Laravel, PHP, HTML, CSS, JavaScript" screen="pmhc/pmhc1.jpg" projectlink="https://pmhc.csgjusticecenter.org">
+    <Fragment slot="content">
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">The Council of State Governments Justice Center (CSGJC) and one of its partners run a program that aims to <strong>improve public-safety responses to people who have mental illnesses</strong>. The groups wanted a better, more interactive way for police and their mental health partners to assess their progress in implementing the program's guidelines.</p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">What I did</h2>
+
+            <p class="mb-5">I developed <strong>a new online portal for agencies to self-assess their progress against the program's criteria</strong>.</p>
+
+            <p class="mb-5">The tool runs through a series of short, simple questions, in order to track progress. It then guides users to relevant resources, depending on what answers they give. When assessment takers finish, they are presented with a readout of their progress.</p>
+
+            <p class="mb-5">In turn, the CSGJC is able to review the data, in aggregate and by individual jurisdiction, through a reporting dashboard.</p>
+
+
+        </div>
+        <div class="col-span-12 grid grid-cols-12 gap-5 my-5">
+            <Card title="Red light, yellow light, green light" className="col-span-12 md:col-span-4">
+                Assessment takers go through six sections of questions. Each answer is assigned a color: red, yellow, or green. The color indicates how well the answer aligns with the program's guidelines.
+            </Card>
+
+            <Card title="Feedback" className="col-span-12 md:col-span-4">
+                The tool provides feedback at the conclusion of each section and at the end of the assessment. Participants can download a pdf or spreadsheet of their results, as well as a list of helpful resources.
+            </Card>
+
+            <Card title="Gauging progress" className="col-span-12 md:col-span-4">
+                Program administrators can view individual agency results, as well as aggregate data, through a reporting dashboard. The dashboard also allows admins to update language and resource links.
+            </Card>
+
+            
+        </div>
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl">The outcome</h2>
+            <p class="mb-5"><strong>More than 250 agencies across the United States have completed the assessment</strong> and continue to improve their programs.</p>
+        </div>
+    </Fragment> 
+    <Fragment slot="image-gallery">
+        <div class="col-span-12 md:col-span-6">
+            <Image src="pmhc/pmhc2.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Question page</p>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+            <Image src="pmhc/pmhc3.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Question results</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="pmhc/pmhc4.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Overall assessment results</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="pmhc/pmhc5.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Admin portal</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="pmhc/pmhc6.jpg" className="gallery-image" width="1200" height="1337" loading="lazy" />
+            <p class="md:text-sm italic mt-2">Question editing screen</p>
+        </div>
+    </Fragment>
+</ProjectLayout>

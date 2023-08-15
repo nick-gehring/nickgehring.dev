@@ -1,0 +1,142 @@
+---
+import Image from "@components/Image.astro";
+---
+<div class="hero mb-20 relative overflow-hidden">
+    <div class="container h-full mx-auto px-6 md:px-4">
+        <div class="grid grid-cols-12 h-full justify-center items-center">
+            <div class="col-span-12 lg:col-span-6 lg:col-start-2 relative z-10">
+                <h1 class="text-4xl md:text-6xl text-white font-bold mb-5">Out-of-this-world web design</h1>
+                <p class="text-1xl md:text-2xl text-white font-light mb-8">I am an experienced developer who works with clients to bring their visions to reality</p>
+                <p class=""><a href="/#about" class="bg-brightsun hover:bg-magenta hover:text-white btn no-underline text-dark inline-block px-8 py-4 font-bold text-xl">Let's go!</a></p>
+            </div>
+        </div>
+    </div>
+    <Image src="home/marbled-planet.png" width="400" height="400" className="hidden md:block absolute -bottom-72 -left-24 -scale-x-100" loading="eager" />
+    <Image src="home/glowing-planet.svg" width="500" height="500" className="absolute top-24 -left-96 -scale-x-100 glowing-planet" loading="eager" />
+    <Image src="home/orange-wavy-planet.svg" width="160" height="160" className="orange-wavy-planet absolute bottom-10 right-[42rem]" loading="eager" />
+    <Image src="home/small-ring-planet.svg" width="140" height="140" className="absolute top-48 left-60 md:top-8 md:left-8 -scale-x-100 animate-teeter-reverse" loading="eager" />
+    <Image src="home/large-ring-planet.png" width="400" height="400" className="absolute -top-48 right-24" loading="eager" />
+    <Image src="home/ring-planet.svg" width="250" height="250" className="hidden md:block absolute bottom-48 right-24 animate-wobble-reverse" loading="eager" />
+    <Image src="home/blue-planet.svg" width="300" height="300" className="absolute -bottom-48 md:-bottom-36 right-12" loading="eager" />
+</div>
+
+<style>
+    .hero {
+        height: calc(100vh - 80px);
+        background-attachment: fixed;
+        background-image: url("../assets/images/home/bigger-stars.svg"), url("../assets/images/home/haze.svg"), url("../assets/images/home/stars.svg"), radial-gradient(50% 50%, rgba(23, 8, 48, 1) 25.6%, rgba(19, 4, 41, 1) 69.05%, rgba(14, 0, 33, 1) 100%);
+        background-size: contain, cover, contain, cover;
+        background-repeat: repeat, no-repeat, repeat, no-repeat;
+        background-position: center, center, center, center;
+    }
+    .duration-24s {
+        animation-duration: 24s;
+    }
+    .animate-teeter {
+        animation-name: teeter;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes teeter {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .animate-teeter-reverse {
+        animation-name: teeter-reverse;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes teeter-reverse {
+        0% {
+            transform: scaleX(-1) rotate(0);        
+        }
+        50% {
+            transform: scaleX(-1) rotate(5deg);        
+        }
+        100% {
+            transform: scaleX(-1) rotate(0);        
+        }
+    }
+    .animate-wobble {
+        animation-name: wobble;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes wobble {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(0, 5px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    .animate-wobble-reverse {
+        animation-name: wobble-reverse;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes wobble-reverse {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(0, -5px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+    .glowing-planet {
+        animation-name: glow;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out; 
+
+    }
+    @keyframes glow {
+        0% {
+            filter: drop-shadow(2px 4px 19px #23bbff);
+        }
+        50% {
+            filter: drop-shadow(2px 4px 25px #23bbff);
+        }
+        100% {
+            filter: drop-shadow(2px 4px 19px #23bbff);
+        }
+    }
+
+    .orange-wavy-planet {
+        animation-name: wavy;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes wavy {
+        0% {
+            filter: drop-shadow(2px 4px 19px #FF6D1A);
+        }
+        50% {
+            filter: drop-shadow(2px 4px 35px #FF6D1A);
+        }
+        100% {
+            filter: drop-shadow(2px 4px 19px #FF6D1A);
+        }
+    }
+</style>

@@ -1,0 +1,22 @@
+---
+export interface Props {
+    className: string;
+	title: string;
+    type: string;
+}
+const { title, className, type } = Astro.props as Props;
+---
+
+{!type && (
+<div class={`bg-cyan-300 p-5 ${className}`}>
+    {title && ( <h3 class="font-bold text-2xl mb-3">{ title }</h3> )}
+    <p class="text-large text-dark"><slot /></p>
+</div>
+)}
+
+{type == 'nobg' && (
+    <div class={`${className}`}>
+        {title && ( <h3 class="font-bold text-2xl mb-3">{ title }</h3> )}
+        <p class="text-large text-dark"><slot /></p>
+    </div>
+    )}

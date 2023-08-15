@@ -1,0 +1,11 @@
+---
+export interface Props {
+    posterSrc: string;
+}
+const { posterSrc } = Astro.props as Props;
+---
+
+<video width="320" height="240" class="w-full aspect-video z-30" controls loop muted poster={posterSrc}>
+  <source src="https://res.cloudinary.com/nickgehring/video/upload/f_auto,q_auto:best/v1664741151/nickgehring.dev/health-insurer/Screen_Recording_2022-10-02_at_4.03.37_PM.mov" type="video/ogg">
+    Your browser does not support the video tag.
+</video>

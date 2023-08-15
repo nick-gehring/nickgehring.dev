@@ -1,0 +1,51 @@
+---
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+import "@assets/global.css";
+
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import About from '@components/About.astro';
+import Technical from '@components/Technical.astro';
+import Work from '@components/Work.astro';
+import Contact from '@components/Contact.astro';
+
+import astronaut from '@assets/images/astronaut.svg';
+---
+
+<Layout title={ title } description="I am an experienced web developer who works with a variety of clients to bring their visions into reality">
+	<Hero />
+	<About />
+	<div class="relative">
+	<img src={astronaut} width="250" height="348" alt="Astronaut Mike Dexter" class="astronaut absolute right-0" />
+	</div>
+	<Technical />
+	<Work />
+	<Contact />
+</Layout>
+
+<style>
+	.astronaut {
+		animation: float 6s ease-in-out infinite;
+		transform: translatey(0px);
+		top: 36rem;
+	}
+	@media(min-width: 768px) {
+		.astronaut {
+			top: 24rem;
+		}
+	}
+	@keyframes float {
+		0% {
+			transform: translatey(0px);
+		}
+		50% {
+			transform: translatey(-20px);
+		}
+		100% {
+			transform: translatey(0px);
+		}
+	}
+</style>

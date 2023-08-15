@@ -1,0 +1,69 @@
+---
+export interface Props {
+    className: string;
+    href: string;
+    src: string;
+    title: string;
+    type: string;
+}
+const { className, href, src, title, type = "small" } = Astro.props as Props;
+import ArrowRight from "@components/ArrowRight.astro";
+import Video from "@components/Video.astro";
+import Image from "@components/Image.astro";
+---
+{type == "small" && (
+<a href={ href } class="group block w-full">
+    <div class="shadow-lg rounded md:shadow-none md:rounded-none md:overflow-hidden relative before:block before:absolute before:transition-all md:group-hover:before:transition-all before:rounded-lg md:group-hover:before:bg-dark-500 before:content-[''] before:z-10 before:h-full before:w-full">
+        <div class="bg-slate-100 h-9 rounded-t-lg px-6 md:px-4 flex items-center content-between">
+            <div class="flex items-center gap-1 h-8 mr-5">
+                <div class="bg-[#FF605C] rounded-full w-3 h-3 cursor-default"></div>
+                <div class="bg-[#FFBD44] rounded-full w-3 h-3 cursor-default"></div>
+                <div class="bg-[#00CA4E] rounded-full w-3 h-3 cursor-default"></div>
+            </div>
+            <div class="flex mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="10" height="9" class="-scale-x-100 fill-slate-400 z-0"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="10" height="9" class="fill-slate-400"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </div>
+            <div class="bg-slate-200 w-2/3 rounded-lg h-6"></div>
+            <div class="flex justify-end w-1/5 gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10" class="fill-slate-400 justify-self-end"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" class="fill-slate-400"><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></svg>
+            </div>
+        </div>
+        <div class="bg-white px-6 md:px-4 py-5 rounded-b-lg border-x-slate-300 border-b-slate-300">
+            <Image src={src} width="313" height="195" className="w-full h-auto" loading="lazy" alt={`This illustrates a screenshot for ${title}`} />
+            <h3 class="absolute left-1/2 -translate-x-1/2 w-full z-20 px-5 w-full text-xl text-white z-20 font-bold drop-shadow text-center translate-y-5 transition-all opacity-0 md:group-hover:opacity-100 md:group-hover:transition-all md:group-hover:-translate-y-32 flex justify-center items-center gap-2">{ title }<ArrowRight width="18" height="24" /></h3>
+        </div>
+    </div>
+    <h3 class="md:hidden text-xl font-bold flex gap-2 mt-5 mb-8">{ title }<ArrowRight width="18" height="24" /></h3>
+</a>
+)}
+
+{type == "large" && (
+    <div class={`shadow-lg relative before:block before:absolute before:transition-all md:group-hover:before:transition-all before:rounded-lg md:group-hover:before:bg-dark-500 before:content-[''] before:z-10 before:h-full before:w-full ${className}`}>
+        <div class="bg-slate-100 h-9 rounded-t-lg px-6 md:px-4 flex items-center content-between">
+            <div class="flex items-center gap-1 h-8 mr-20">
+                <div class="bg-[#FF605C] rounded-full w-3 h-3 cursor-default"></div>
+                <div class="bg-[#FFBD44] rounded-full w-3 h-3 cursor-default"></div>
+                <div class="bg-[#00CA4E] rounded-full w-3 h-3 cursor-default"></div>
+            </div>
+            <div class="flex mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="10" height="9" class="-scale-x-100 fill-slate-400 z-0"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="10" height="9" class="fill-slate-400"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </div>
+            <div class="bg-slate-200 w-2/3 rounded-lg h-6"></div>
+            <div class="flex justify-end w-1/5 gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10" class="fill-slate-400 justify-self-end"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" class="fill-slate-400"><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></svg>
+            </div>
+        </div>
+        <div class="bg-white px-6 md:px-4 py-5 rounded-b-lg border-x-slate-300 border-b-slate-300">
+            <Image src={src} width="313" height="195" className="w-full h-auto" loading="lazy" alt={`This illustrates a screenshot for ${title}`} />
+        </div>
+    </div>
+)}
+
+{type == "video" && (
+
+            <Video posterSrc={src} />
+)}

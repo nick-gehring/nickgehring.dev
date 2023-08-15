@@ -1,0 +1,42 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import Image from '@components/Image.astro';
+---
+
+<ProjectLayout title="A children's game with adult consequences" description="How poverty is like musical chairs " industry="Research, universities" tech="HTML, CSS, JavaScript, PixiJS, GSAP" screen="musical-chairs/musical2.jpg" type="video" projectlink="https://confrontingpoverty.org/the-musical-chairs-of-poverty/">
+    <Fragment slot="content">
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 font-bold text-3xl md:text-4xl">The challenge</h2>
+
+            <p class="mb-5">Part of the challenge had already been solved. A noted professor of social welfare at Washington University in St. Louis has spent decades studying poverity in America. He compares the American economy to a  <strong>“large-scale version of musical chairs”</strong> – someone is always going to be left out. It was our job to turn that metaphor into a web app.</p>
+
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl mt-12">What I did</h2>
+
+            <p class="mb-5">Working with the professor and a designer, we developed a virtual game of musical chairs, where participants are represented by colored circles. Through simple probability, the participants either get a seat (job) or do not.</p>
+
+            <p class="mb-5">Technically, the chairs and players are rendered on <strong>HTML canvas with the assistance of GreenSock and PixiJS.</strong> We found early on we had to be careful about the performance of the players’ motion, thus choosing to use the canvas element. CSS animation, though powerful, does not perform well when independently animating 100 elements.</p>
+
+
+        </div>
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 class="mb-4 mt-5 font-bold text-3xl md:text-4xl">The outcome</h2>
+            <p class="">The professor uses the app in his classroom and in promoting his continued research.</p>
+        </div>
+    </Fragment> 
+    <Fragment slot="image-gallery">
+        <div class="col-span-12 md:col-span-4">
+            <Image src="musical-chairs/musical1.png" className="gallery-image" width="1200" height="1337" loading="lazy" alt="A set of criteria allow players to create a game of musical chairs" />
+            <p class="md:text-sm italic mt-2">The game starts</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="musical-chairs/musical2.png" className="gallery-image" width="1200" height="1337" loading="lazy" alt="The criteria is set and the game is about to be played" />
+            <p class="md:text-sm italic mt-2">Criteria is picked</p>
+        </div>
+        <div class="col-span-12 md:col-span-4">
+            <Image src="musical-chairs/musical3.png" className="gallery-image" width="1200" height="1337" loading="lazy" alt="The game is over. Some circles have landed on seats (jobs); some have not" />
+            <p class="md:text-sm italic mt-2">Game ends: some win, some lose</p>
+        </div>
+    </Fragment>
+</ProjectLayout>

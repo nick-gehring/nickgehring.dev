@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https:/nickgehring.dev/sitemap-index.xml

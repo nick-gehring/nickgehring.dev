@@ -4,4 +4,4 @@ This is my portfolio site. It uses Astro and is my first stab at using Tailwind.
 
 1. `npm install` 
 2. `npm run dev`
-3. `npm run prod`
+3. `npm run build`

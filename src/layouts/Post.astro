@@ -9,14 +9,14 @@ const { abovetitle, title, description } = Astro.props;
 ---
 
 <Layout title={ title } description={ description }>
-	<div class="container mx-auto px-6 md:px-4 mb-12 mt-5">
+	<div class="container mx-auto px-6 md:px-4 mb-12 mt-5 post">
 		<article class="grid grid-cols-12">
 			<div class="col-span-12 lg:col-span-10 lg:col-start-2">
-					<p class="col-span-12 lg:col-span-11 lg:col-start-2 md:text-xl breadcrumb"><a href="/journal/" class="text-purple font-bold">Journal</a></p>
+				<p class="col-span-12 lg:col-span-11 lg:col-start-2 md:text-xl breadcrumb"><a href="/journal/" class="text-purple font-bold">Journal</a></p>
 
-					<h1 class="leading-tight lg:col-span-10 lg:col-start-2 col-span-12 text-3xl md:text-6xl font-bold mb-5">{title}</h1>
+				<h1 class="leading-tight lg:col-span-10 lg:col-start-2 col-span-12 text-3xl md:text-6xl font-bold mb-5">{title}</h1>
 
-					<slot />
+				<slot />
 			</div>
 		</article>
 	</div>

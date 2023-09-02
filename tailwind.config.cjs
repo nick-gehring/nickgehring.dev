@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  safelist: ["wp-block-button__link", "mb-10"],
   theme: {
     fontFamily: {
       sans: ["Montserrat", "Trebuchet MS", "Helvetica", "sans-serif"],

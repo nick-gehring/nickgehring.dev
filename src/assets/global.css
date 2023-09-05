@@ -70,7 +70,7 @@
         @apply font-bold;
     }
     .post a.wp-block-button__link {
-        @apply bg-cyan hover:bg-purple !no-underline transition-all !text-dark hover:text-white text-dark lg:w-1/5 px-6 md:px-4 py-2 font-bold text-base flex justify-between;
+        @apply bg-cyan hover:bg-purple !no-underline transition-all !text-dark hover:text-white text-dark lg:w-2/5 px-6 md:px-4 py-2 font-bold text-base flex justify-between;
     }
 
     .post a.wp-block-button__link::after {

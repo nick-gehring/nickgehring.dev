@@ -146,43 +146,45 @@
 </style>
 
 <script>
-    const rocket = document.querySelector('.rocket');
-    const flamesPaths = document.querySelectorAll('.flames path');
-    const aboutTop = document.querySelector('.show-rocket').offsetTop;
-    const rocketContainer = document.querySelector('.rocket');
+    if(document.querySelector('.show-rocket')) {
+        const rocket = document.querySelector('.rocket');
+        const flamesPaths = document.querySelectorAll('.flames path');
+        const aboutTop = document.querySelector('.show-rocket').offsetTop;
+        const rocketContainer = document.querySelector('.rocket');
 
-    rocket.addEventListener('click', (e) => {
-        e.preventDefault();
-        flamesPaths.forEach((path) => {
-            path.classList.add("flames--burning");
-        });
-        rocket.classList.add("rocket--shaking");
-        rocket.classList.add("rocket--is-moving");
+        rocket.addEventListener('click', (e) => {
+            e.preventDefault();
+            flamesPaths.forEach((path) => {
+                path.classList.add("flames--burning");
+            });
+            rocket.classList.add("rocket--shaking");
+            rocket.classList.add("rocket--is-moving");
 
-        setTimeout(() => {
-            document.getElementById('top').scrollIntoView(true);
-        }, 1500);
-    });
-
-    window.addEventListener('scroll', () => {
-        if(window.scrollY === 0 && rocket.classList.contains("rocket--is-moving")) {
-            rocket.classList.remove("rocket--shaking");
             setTimeout(() => {
-                flamesPaths.forEach((path) => {
-                path.classList.remove("flames--burning");
+                document.getElementById('top').scrollIntoView(true);
+            }, 1500);
+        });
+
+        window.addEventListener('scroll', () => {
+            if(window.scrollY === 0 && rocket.classList.contains("rocket--is-moving")) {
+                rocket.classList.remove("rocket--shaking");
+                setTimeout(() => {
+                    flamesPaths.forEach((path) => {
+                    path.classList.remove("flames--burning");
+                    rocketContainer.classList.add("rocket--rest");
+                    rocketContainer.classList.remove("rocket--awake");
+                    rocket.classList.remove("rocket--is-moving");
+                });
+                }, 500);
+            } else if(window.scrollY > aboutTop - 400) {
+                rocketContainer.classList.add("rocket--awake");
+                rocketContainer.classList.remove("rocket--rest");
+            }  else if((window.scrollY > 0 && window.scrollY < aboutTop - 400) && !rocket.classList.contains("rocket--is-moving")) {
                 rocketContainer.classList.add("rocket--rest");
                 rocketContainer.classList.remove("rocket--awake");
-                rocket.classList.remove("rocket--is-moving");
-            });
-            }, 500);
-        } else if(window.scrollY > aboutTop - 400) {
-            rocketContainer.classList.add("rocket--awake");
-            rocketContainer.classList.remove("rocket--rest");
-        }  else if((window.scrollY > 0 && window.scrollY < aboutTop - 400) && !rocket.classList.contains("rocket--is-moving")) {
-            rocketContainer.classList.add("rocket--rest");
-            rocketContainer.classList.remove("rocket--awake");
-        }
+            }
 
-        
-    });
+            
+        });
+    }
 </script>
